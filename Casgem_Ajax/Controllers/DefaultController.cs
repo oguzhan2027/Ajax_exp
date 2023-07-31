@@ -39,5 +39,11 @@ namespace Casgem_Ajax.Controllers
             var jsonValues = JsonConvert.SerializeObject(values);
             return Json(jsonValues);
         }
+        public IActionResult UpdateCustomer(Customer customer)
+        {
+            context.Customers.Update(customer);
+            context.SaveChanges();
+            return NoContent();
+        }
     }
 }
